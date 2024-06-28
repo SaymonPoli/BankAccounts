@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'mainwindow.h'
+** Meta object code from reading C++ file 'accountoperations.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.13)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../mainwindow.h"
+#include "../../accountoperations.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'mainwindow.h' doesn't include <QObject>."
+#error "The header file 'accountoperations.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.15.13. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,32 +21,32 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_MainWindow_t {
+struct qt_meta_stringdata_AccountOperations_t {
     QByteArrayData data[6];
-    char stringdata0[103];
+    char stringdata0[97];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_AccountOperations_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
+static const qt_meta_stringdata_AccountOperations_t qt_meta_stringdata_AccountOperations = {
     {
-QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 23), // "on_actionEdit_triggered"
-QT_MOC_LITERAL(2, 35, 0), // ""
-QT_MOC_LITERAL(3, 36, 22), // "on_LoginButton_clicked"
-QT_MOC_LITERAL(4, 59, 22), // "on_AdminButton_clicked"
-QT_MOC_LITERAL(5, 82, 20) // "on_NewClient_clicked"
+QT_MOC_LITERAL(0, 0, 17), // "AccountOperations"
+QT_MOC_LITERAL(1, 18, 19), // "on_Transfer_clicked"
+QT_MOC_LITERAL(2, 38, 0), // ""
+QT_MOC_LITERAL(3, 39, 19), // "on_Withdraw_clicked"
+QT_MOC_LITERAL(4, 59, 18), // "on_Deposit_clicked"
+QT_MOC_LITERAL(5, 78, 18) // "on_Confirm_clicked"
 
     },
-    "MainWindow\0on_actionEdit_triggered\0\0"
-    "on_LoginButton_clicked\0on_AdminButton_clicked\0"
-    "on_NewClient_clicked"
+    "AccountOperations\0on_Transfer_clicked\0"
+    "\0on_Withdraw_clicked\0on_Deposit_clicked\0"
+    "on_Confirm_clicked"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_MainWindow[] = {
+static const uint qt_meta_data_AccountOperations[] = {
 
  // content:
        8,       // revision
@@ -74,48 +74,48 @@ static const uint qt_meta_data_MainWindow[] = {
        0        // eod
 };
 
-void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void AccountOperations::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<MainWindow *>(_o);
+        auto *_t = static_cast<AccountOperations *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_actionEdit_triggered(); break;
-        case 1: _t->on_LoginButton_clicked(); break;
-        case 2: _t->on_AdminButton_clicked(); break;
-        case 3: _t->on_NewClient_clicked(); break;
+        case 0: _t->on_Transfer_clicked(); break;
+        case 1: _t->on_Withdraw_clicked(); break;
+        case 2: _t->on_Deposit_clicked(); break;
+        case 3: _t->on_Confirm_clicked(); break;
         default: ;
         }
     }
     (void)_a;
 }
 
-QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = { {
-    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_MainWindow.data,
-    qt_meta_data_MainWindow,
+QT_INIT_METAOBJECT const QMetaObject AccountOperations::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    qt_meta_stringdata_AccountOperations.data,
+    qt_meta_data_AccountOperations,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *MainWindow::metaObject() const
+const QMetaObject *AccountOperations::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *MainWindow::qt_metacast(const char *_clname)
+void *AccountOperations::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_MainWindow.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_AccountOperations.stringdata0))
         return static_cast<void*>(this);
-    return QMainWindow::qt_metacast(_clname);
+    return QDialog::qt_metacast(_clname);
 }
 
-int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int AccountOperations::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

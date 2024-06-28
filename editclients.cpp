@@ -8,19 +8,19 @@ editClients::editClients(QWidget *parent)
     ui->setupUi(this);
 }
 
-void editClients::widgetInicialize(std::vector<Client> &clients)
+void editClients::widgetInicialize(std::vector<pair<Client, Conta*>> &Accounts)
 {
     this->ui->AccountsTable->clear();
-    this->ui->AccountsTable->setRowCount(clients.size()); // Ajustado para apenas o tamanho de clients
+    this->ui->AccountsTable->setRowCount(Accounts.size()); // Ajustado para apenas o tamanho de clients
     this->ui->AccountsTable->setColumnCount(4);
     this->ui->AccountsTable->setHorizontalHeaderLabels(QStringList() << "Nome" << "CPF" << "Salario" << "Tipo de conta");
 
     int row = 0;
-    for(auto& client : clients) {
-        QTableWidgetItem *nameItem = new QTableWidgetItem(QString::fromStdString(client.GetName()));
-        QTableWidgetItem *cpfItem = new QTableWidgetItem(QString::fromStdString(client.GetCpf()));
-        QTableWidgetItem *salaryItem = new QTableWidgetItem(QString::fromStdString(client.GetIncome()));
-        QTableWidgetItem *accountTypeItem = new QTableWidgetItem("sax");
+    for(auto& Account : Accounts) {
+        QTableWidgetItem *nameItem = new QTableWidgetItem(QString::fromStdString(Account.first.GetName()));
+        QTableWidgetItem *cpfItem = new QTableWidgetItem(QString::fromStdString(Account.first.GetCpf()));
+        QTableWidgetItem *salaryItem = new QTableWidgetItem(QString::fromStdString(Account.first.GetIncome()));
+        QTableWidgetItem *accountTypeItem = new QTableWidgetItem(QString::fromStdString(Account.second->GetAccountType()));
 
         this->ui->AccountsTable->setItem(row, 0, nameItem);
         this->ui->AccountsTable->setItem(row, 1, cpfItem);
@@ -36,5 +36,11 @@ void editClients::widgetInicialize(std::vector<Client> &clients)
 editClients::~editClients()
 {
     delete ui;
+}
+
+
+void editClients::on_pushButton_clicked()
+{
+    accept();
 }
 

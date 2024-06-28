@@ -19,10 +19,11 @@ public:
     //getters and setters
     //void update(string name,string address,string job,float income) {}
 
-    string GetInformation();
-    string GetName();
-    string GetCpf();
-    string GetIncome();
+    string GetInformation() const;
+    string GetName() const;
+    string GetCpf() const;
+    string GetIncome() const;
+    string GetPassoword() const;
 };
 
 #endif

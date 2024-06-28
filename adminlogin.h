@@ -15,7 +15,7 @@ class AdminLogin : public QDialog
 
 public:
     explicit AdminLogin(QWidget *parent = nullptr);
-    void setClients(std::vector<std::pair<Client, Conta>> &Accounts);
+    void setClients(std::vector<std::pair<Client, Conta*>> &Accounts);
     ~AdminLogin();
 
 private slots:
@@ -27,6 +27,7 @@ private slots:
 
 private:
     Ui::AdminLogin *ui;
+    std::vector<pair<Client, Conta*>> m_Clients;
     std::string m_Login, m_Senha;
 };
 

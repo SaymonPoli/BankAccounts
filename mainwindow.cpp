@@ -29,9 +29,27 @@ bool MainWindow::authenticate(const std::string &login, const std::string &passw
     {
         if(Account.first.GetCpf() == login && Account.first.GetPassoword() == password)
         {
+            AccountOperations dialog(this);
+            if(dialog.exec() == QDialog::Accepted)
+            {
+                double value = dialog.GetValue();
+                std::string operation = dialog.GetOperation(),
+                            transferDestiny = dialog.GetTranferCpf();
+
+                if(operation == "Transfer")
+                {
+                    Conta* contaParaTranferir = nullptr;
+                    for (auto &TransferAccount : m_Accounts) {
+                        if(TransferAccount.first.GetCpf() == transferDestiny){
+                            contaParaTranferir = TransferAccount.second;
+                        }
+                    }
+                    Account.second->Transfer((value), *contaParaTranferir);
+                }
+
+            }
             return true;
         }
-
     }
     return false;
 }
@@ -71,14 +89,7 @@ void MainWindow::on_LoginButton_clicked()
     LoginOrRegister dialog(this);
     if(dialog.exec() == QDialog::Accepted)
     {
-        if(authenticate(dialog.GetLogin(), dialog.GetPassowrd()))
-        {
-            AccountOperations dialog(this);
-            if(dialog.exec() == QDialog::Accepted)
-            {
-
-            }
-        }
+        authenticate(dialog.GetLogin(), dialog.GetPassowrd());
     }
 }
 
@@ -93,5 +104,3 @@ void MainWindow::on_AdminButton_clicked()
 }
 
 void MainWindow::on_NewClient_clicked() { CreateNewAccount(); }
-
-

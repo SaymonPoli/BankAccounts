@@ -38,3 +38,9 @@ editClients::~editClients()
     delete ui;
 }
 
+
+void editClients::on_pushButton_clicked()
+{
+    accept();
+}
+

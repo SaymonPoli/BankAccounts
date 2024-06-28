@@ -18,6 +18,9 @@ public:
     double GetValue();
     std::string GetTranferCpf();
     std::string GetOperation();
+    void SetWindowTitle( const std::string&);
+    void SetBalance( const double&);
+    void SetCredit(const double&);
 
 private slots:
     void on_Transfer_clicked();
@@ -25,6 +28,8 @@ private slots:
     void on_Withdraw_clicked();
 
     void on_Deposit_clicked();
+
+    void on_Confirm_clicked();
 
 private:
     Ui::AccountOperations *ui;

@@ -18,6 +18,9 @@ public:
     void widgetInicialize(std::vector<pair<Client, Conta*>> &clients);
     ~editClients();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::editClients *ui;
 };

@@ -2,7 +2,6 @@
 #define ACCOUNTS_H
 
 #include <iostream>
-// #include "client.h"
 
 class Conta
 {
@@ -15,7 +14,9 @@ public:
     Conta(double balance = 0) : m_balance(balance) {};
 
     std::string GetAccountType(){ return m_AccountType; }
+    double GetBalance() { return m_balance; };
     void Deposit(double &value);
+    virtual double GetLimit() = 0;
     virtual void Withdraw(double &ammount) = 0;
     virtual void Transfer(double &ammount, Conta &conta) = 0;
 };
@@ -24,6 +25,7 @@ class ContaCorrente : public Conta
 {
 public:
     ContaCorrente(double balance = 0) : Conta(balance) { m_AccountType = "Conta Corrente";};
+    double GetLimit() override { return 0; };
     void Withdraw(double &ammont) override;
     void Transfer(double &ammount, Conta &conta) override;
 };
@@ -34,7 +36,8 @@ protected:
     double m_limit;
 
 public:
-    ContaEspecial(double balance = 0) : Conta(balance) {m_AccountType = "Conta Especial";};
+    ContaEspecial(double balance = 0) : Conta(balance), m_limit(5000) {m_AccountType = "Conta Especial";};
+    double GetLimit() override { return m_limit; } ;
     void Withdraw(double &ammount) override;
     void Transfer(double &amount, Conta &conta) override;
 };
@@ -45,7 +48,8 @@ private:
     double m_limit;
     double m_points;
 public:
-    ContaMaster(double balance = 0) : Conta(balance) {m_AccountType = "Conta Master";};
+    ContaMaster(double balance = 0) : Conta(balance), m_limit(10000) {m_AccountType = "Conta Master";};
+    double GetLimit() override { return m_limit; };
     void Withdraw (double &ammount) override;
     void Transfer (double &ammount, Conta &conta) override;
 };

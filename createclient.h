@@ -29,19 +29,6 @@ public:
 
 private slots:
     void on_CreateAccountButton_clicked();
-
-    // void on_NameField_textEdited(const QString &arg1);
-
-    // void on_CpfField_textEdited(const QString &arg1);
-
-    // void on_AdressField_textEdited(const QString &arg1);
-
-    // void on_SalaryField_textEdited(const QString &arg1);
-
-    // void on_EmailField_textEdited(const QString &arg1);
-
-    // void on_PasswordField_textEdited(const QString &arg1);
-
 private:
     Ui::CreateClient *ui;
     MainWindow* m_ParentWindow;

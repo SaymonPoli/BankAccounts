@@ -36,7 +36,6 @@ void AdminLogin::on_AdmLoginButton_clicked()
         editClients dialog(this);
         dialog.widgetInicialize(m_Clients);
         if(dialog.exec() == QDialog::Accepted){
-            // sexo
         }
     }
 };

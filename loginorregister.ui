@@ -54,11 +54,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="UserLogin">
-      <property name="inputMask">
-       <string>000.000.000-00</string>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="UserLogin"/>
     </item>
     <item>
      <widget class="QLabel" name="label_2">
@@ -73,14 +69,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="UserPassword">
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="UserPassword"/>
     </item>
    </layout>
   </widget>

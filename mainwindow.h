@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
 
-    virtual void CreateNewAccount();
+    void CreateNewAccount(string, string, string, string, string, string, double);
 
     ~MainWindow();
 
@@ -35,6 +35,6 @@ private:
     Ui::MainWindow *ui;
 
     bool authenticate(const std::string &login, const std::string &password);
-    std::vector<pair<Client, Conta*>> m_Accounts;
+    std::vector<pair<Client, unique_ptr<Conta*>>> m_Accounts;
 };
 #endif // MAINWINDOW_H

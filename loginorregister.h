@@ -13,8 +13,6 @@ class LoginOrRegister : public QDialog
 
 public:
     explicit LoginOrRegister(QWidget *parent = nullptr);
-    std::string GetLogin();
-    std::string GetPassowrd();
     ~LoginOrRegister();
 
 private slots:

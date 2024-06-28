@@ -23,6 +23,7 @@ public:
     string GetName();
     string GetCpf();
     string GetIncome();
+    string GetPassoword();
 };
 
 #endif

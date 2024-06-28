@@ -16,24 +16,31 @@ class CreateClient : public QDialog
 
 public:
     explicit CreateClient(QWidget *parent = nullptr);
-    void createAccount(std::vector<Client> &ClientVector);
-    Client getClient();
+
+    string getName();
+    string getCPF();
+    string getAddress();
+    string getJob();
+    string getPassword();
+    string getAccountType();
+    double getIncome();
+
     ~CreateClient();
 
 private slots:
     void on_CreateAccountButton_clicked();
 
-    void on_NameField_textEdited(const QString &arg1);
+    // void on_NameField_textEdited(const QString &arg1);
 
-    void on_CpfField_textEdited(const QString &arg1);
+    // void on_CpfField_textEdited(const QString &arg1);
 
-    void on_AdressField_textEdited(const QString &arg1);
+    // void on_AdressField_textEdited(const QString &arg1);
 
-    void on_SalaryField_textEdited(const QString &arg1);
+    // void on_SalaryField_textEdited(const QString &arg1);
 
-    void on_EmailField_textEdited(const QString &arg1);
+    // void on_EmailField_textEdited(const QString &arg1);
 
-    void on_PasswordField_textEdited(const QString &arg1);
+    // void on_PasswordField_textEdited(const QString &arg1);
 
 private:
     Ui::CreateClient *ui;

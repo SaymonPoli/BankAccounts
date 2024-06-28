@@ -14,3 +14,4 @@ string Client::GetInformation()
 string Client::GetName() { return m_name; };
 string Client::GetCpf() { return m_cpf; };
 string Client::GetIncome() { return to_string(m_income); };
+string Client::GetPassoword() { return m_password; };

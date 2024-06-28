@@ -54,7 +54,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="UserLogin"/>
+     <widget class="QLineEdit" name="UserLogin">
+      <property name="inputMask">
+       <string>000.000.000-00</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_2">

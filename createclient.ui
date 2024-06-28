@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>1</x>
@@ -133,7 +133,7 @@
      </spacer>
     </item>
     <item row="7" column="4">
-     <widget class="QLineEdit" name="EmailField"/>
+     <widget class="QLineEdit" name="JobField"/>
     </item>
     <item row="5" column="1">
      <widget class="QLabel" name="label_4">
@@ -274,7 +274,7 @@
   <tabstop>CpfField</tabstop>
   <tabstop>AdressField</tabstop>
   <tabstop>SalaryField</tabstop>
-  <tabstop>EmailField</tabstop>
+  <tabstop>JobField</tabstop>
   <tabstop>CreateAccountButton</tabstop>
  </tabstops>
  <resources/>

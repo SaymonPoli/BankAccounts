@@ -8,11 +8,13 @@ class Conta
 {
 protected:
     double m_balance;
+    std::string m_AccountType;
 
 public:
     //constructors and destructor
     Conta(double balance = 0) : m_balance(balance) {};
 
+    std::string GetAccountType(){ return m_AccountType; }
     void Deposit(double &value);
     virtual void Withdraw(double &ammount) = 0;
     virtual void Transfer(double &ammount, Conta &conta) = 0;
@@ -21,7 +23,7 @@ public:
 class ContaCorrente : public Conta
 {
 public:
-    ContaCorrente(double balance = 0) : Conta(balance) {};
+    ContaCorrente(double balance = 0) : Conta(balance) { m_AccountType = "Conta Corrente";};
     void Withdraw(double &ammont) override;
     void Transfer(double &ammount, Conta &conta) override;
 };
@@ -32,7 +34,7 @@ protected:
     double m_limit;
 
 public:
-    ContaEspecial(double balance = 0) : Conta(balance) {};
+    ContaEspecial(double balance = 0) : Conta(balance) {m_AccountType = "Conta Especial";};
     void Withdraw(double &ammount) override;
     void Transfer(double &amount, Conta &conta) override;
 };
@@ -43,7 +45,7 @@ private:
     double m_limit;
     double m_points;
 public:
-    ContaMaster(double balance = 0) : Conta(balance) {};
+    ContaMaster(double balance = 0) : Conta(balance) {m_AccountType = "Conta Master";};
     void Withdraw (double &ammount) override;
     void Transfer (double &ammount, Conta &conta) override;
 };

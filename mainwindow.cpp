@@ -4,8 +4,13 @@
 #include "loginorregister.h"
 #include "adminlogin.h"
 #include "createclient.h"
+#include "accountoperations.h"
 #include "client.h"
 #include "account.h"
+#include <unordered_map>
+#include <memory>
+#include <string>
+#include <qglobal.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,30 +24,39 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// bool MainWindow::authenticate(const std::string &login,
-//                               const std::string &password) {
-//     for (const auto &client : m_Clients) {
-//         // if(client->getCPF())'
-//         return false;
-//     }
-// }
+bool MainWindow::authenticate(const std::string &login, const std::string &password) {
+    for (auto &Account : m_Accounts)
+    {
+        if(Account.first.GetCpf() == login && Account.first.GetPassoword() == password)
+        {
+            return true;
+        }
 
-void MainWindow::CreateNewAccount(string name, string cpf, string address, string job, string password, string accountType, double income)
-{
-    Client client(name, address, job, cpf, income, password);
-    Conta* account = nullptr;
-
-    if (accountType == "Corrente") {
-        account = new ContaCorrente();
-    } else if (accountType == "Especial") {
-        account = new ContaEspecial();
-    } else if (accountType == "Master") {
-        account = new ContaMaster();
-    } else {
-        // TODO Handle error or default case
     }
-    pair<Client, unique_ptr<Conta*>> contas(client, &account);
-    m_Accounts.push_back(contas);
+    return false;
+}
+
+void MainWindow::CreateNewAccount()
+{
+    CreateClient dialog(this);
+    if(dialog.exec() == QDialog::Accepted)
+    {
+        string accountType = dialog.getAccountType();
+        Client client(dialog.getName(), dialog.getAddress(), dialog.getJob(), dialog.getCPF(), dialog.getIncome(), dialog.getPassword());
+        Conta* account = nullptr;
+        if (accountType == "Conta corrente") {
+            account = new ContaCorrente();
+        } else if (accountType == "Conta especial") {
+            account = new ContaEspecial();
+        } else if (accountType == "Conta master") {
+            account = new ContaMaster();
+        } else {
+            // TODO Handle error or default case
+            account = new ContaCorrente();
+        }
+        pair<Client, Conta*> contas(client, account);
+        m_Accounts.push_back(contas);
+    }
 }
 
 void MainWindow::on_actionEdit_triggered()
@@ -52,34 +66,32 @@ void MainWindow::on_actionEdit_triggered()
     clientsWindow.exec();
 }
 
-
 void MainWindow::on_LoginButton_clicked()
 {
     LoginOrRegister dialog(this);
     if(dialog.exec() == QDialog::Accepted)
     {
+        if(authenticate(dialog.GetLogin(), dialog.GetPassowrd()))
+        {
+            AccountOperations dialog(this);
+            if(dialog.exec() == QDialog::Accepted)
+            {
 
+            }
+        }
     }
 }
 
 void MainWindow::on_AdminButton_clicked()
 {
     AdminLogin dialog(this);
-    // dialog.setClients(m_Accounts);
+    dialog.setClients(m_Accounts);
     if(dialog.exec() == QDialog::Accepted)
     {
 
     }
 }
 
-
-
-void MainWindow::on_NewClient_clicked()
-{
-    CreateClient dialog(this);
-    if (dialog.exec() == QDialog::Accepted) {
-        // m_Accounts.push_back(dialog);
-    }
-}
+void MainWindow::on_NewClient_clicked() { CreateNewAccount(); }
 
 

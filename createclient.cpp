@@ -13,49 +13,18 @@ CreateClient::~CreateClient()
     delete ui;
 }
 
-void CreateClient::on_CreateAccountButton_clicked()
-{
-    if(m_ParentWindow)
-    {
-        // ->CreateNewAccount();
-    }
-    m_Client = Client(m_Name, m_Adress, m_Job, m_Cpf, m_Salary, m_Password);
-    accept();
-}
+string CreateClient::getName() { return ui->NameField->text().toStdString(); }
 
-void CreateClient::on_NameField_textEdited(const QString &arg1)
-{
-    m_Name = arg1.toStdString();
-}
+string CreateClient::getCPF() { return ui->CpfField->text().toStdString(); }
 
-void CreateClient::on_CpfField_textEdited(const QString &arg1)
-{
-    m_Cpf = arg1.toStdString();
-}
+string CreateClient::getAddress() { return ui->AdressField->text().toStdString(); }
 
-void CreateClient::on_AdressField_textEdited(const QString &arg1)
-{
-    m_Adress = arg1.toStdString();
-}
+string CreateClient::getJob() { return ui->JobField->text().toStdString(); }
 
-void CreateClient::on_SalaryField_textEdited(const QString &arg1)
-{
-    m_Salary = arg1.toFloat();
-}
+string CreateClient::getPassword() { return ui->PasswordField->text().toStdString(); }
 
-void CreateClient::on_EmailField_textEdited(const QString &arg1)
-{
-    m_Job = arg1.toStdString();
-}
+string CreateClient::getAccountType() { return ui->AccountField->currentText().toStdString(); }
 
-void CreateClient::on_PasswordField_textEdited(const QString &arg1)
-{
-    m_Password = arg1.toStdString();
-}
+double CreateClient::getIncome() { return ui->SalaryField->text().toDouble(); }
 
-Client CreateClient::getClient()
-{
-    return m_Client;
-}
-
-
+void CreateClient::on_CreateAccountButton_clicked() { accept(); }

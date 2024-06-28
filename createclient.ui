@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>1</x>
@@ -23,31 +23,19 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="3">
-     <widget class="QLabel" name="label_3">
+    <item row="5" column="1">
+     <widget class="QLabel" name="label_4">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>CPF:</string>
+       <string>Adress:</string>
       </property>
      </widget>
     </item>
-    <item row="8" column="3">
-     <widget class="QLabel" name="label_8">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Password:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="2">
+    <item row="9" column="2">
      <widget class="QComboBox" name="AccountField">
       <property name="placeholderText">
        <string>Select</string>
@@ -69,31 +57,6 @@
       </item>
      </widget>
     </item>
-    <item row="9" column="3">
-     <spacer name="verticalSpacer_4">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="7" column="3">
-     <widget class="QLabel" name="label_7">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Job:</string>
-      </property>
-     </widget>
-    </item>
     <item row="5" column="0">
      <spacer name="horizontalSpacer">
       <property name="orientation">
@@ -107,63 +70,20 @@
       </property>
      </spacer>
     </item>
-    <item row="8" column="1">
-     <widget class="QLabel" name="label_5">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Account:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="3">
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="7" column="4">
-     <widget class="QLineEdit" name="EmailField"/>
-    </item>
-    <item row="5" column="1">
-     <widget class="QLabel" name="label_4">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Adress:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLabel" name="label_6">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Salary:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="4">
-     <widget class="QLineEdit" name="PasswordField"/>
-    </item>
     <item row="4" column="2">
      <widget class="QLineEdit" name="NameField"/>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Name:</string>
+      </property>
+     </widget>
     </item>
     <item row="0" column="1" colspan="4">
      <spacer name="verticalSpacer">
@@ -178,15 +98,21 @@
       </property>
      </spacer>
     </item>
-    <item row="4" column="1">
-     <widget class="QLabel" name="label_2">
+    <item row="8" column="2">
+     <widget class="QLineEdit" name="JobField"/>
+    </item>
+    <item row="9" column="4">
+     <widget class="QLineEdit" name="PasswordField"/>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLabel" name="label_3">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Name:</string>
+       <string>CPF:</string>
       </property>
      </widget>
     </item>
@@ -203,6 +129,30 @@
       </property>
      </spacer>
     </item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Job:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0" colspan="6" alignment="Qt::AlignHCenter">
+     <widget class="QPushButton" name="CreateAccountButton">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Create</string>
+      </property>
+     </widget>
+    </item>
     <item row="2" column="3">
      <spacer name="verticalSpacer_3">
       <property name="orientation">
@@ -216,9 +166,6 @@
       </property>
      </spacer>
     </item>
-    <item row="7" column="2">
-     <widget class="QLineEdit" name="SalaryField"/>
-    </item>
     <item row="4" column="4">
      <widget class="QLineEdit" name="CpfField">
       <property name="inputMask">
@@ -226,7 +173,7 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="5">
+    <item row="8" column="5">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -239,17 +186,58 @@
       </property>
      </spacer>
     </item>
-    <item row="10" column="0" colspan="6" alignment="Qt::AlignHCenter">
-     <widget class="QPushButton" name="CreateAccountButton">
+    <item row="9" column="1">
+     <widget class="QLabel" name="label_5">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Create</string>
+       <string>Account:</string>
       </property>
      </widget>
+    </item>
+    <item row="9" column="3">
+     <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Password:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="3">
+     <spacer name="verticalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="12" column="3">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="2" colspan="3">
+     <widget class="QLineEdit" name="AdressField"/>
     </item>
     <item row="1" column="0" colspan="6" alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label">
@@ -263,8 +251,24 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="2" colspan="3">
-     <widget class="QLineEdit" name="AdressField"/>
+    <item row="8" column="3">
+     <widget class="QLabel" name="label_6">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Salary:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="4">
+     <widget class="QDoubleSpinBox" name="SalaryField">
+      <property name="maximum">
+       <double>9999999999999999455752309870428160.000000000000000</double>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -273,8 +277,6 @@
   <tabstop>NameField</tabstop>
   <tabstop>CpfField</tabstop>
   <tabstop>AdressField</tabstop>
-  <tabstop>SalaryField</tabstop>
-  <tabstop>EmailField</tabstop>
   <tabstop>CreateAccountButton</tabstop>
  </tabstops>
  <resources/>

@@ -13,20 +13,13 @@ LoginOrRegister::~LoginOrRegister()
     delete ui;
 }
 
-void LoginOrRegister::on_UserLogin_textEdited(const QString &arg1)
-{
-    m_Login = arg1.toStdString();
-}
+std::string LoginOrRegister::GetLogin(){ return ui->UserLogin->text().toStdString(); };
 
+std::string LoginOrRegister::GetPassowrd(){ return ui->UserPassword->text().toStdString(); }
 
-void LoginOrRegister::on_UserPassword_textEdited(const QString &arg1)
-{
-    m_Password = arg1.toStdString();
-}
+void LoginOrRegister::on_UserLogin_textEdited(const QString &arg1){ m_Login = arg1.toStdString(); }
 
+void LoginOrRegister::on_UserPassword_textEdited(const QString &arg1){ m_Password = arg1.toStdString(); }
 
-void LoginOrRegister::on_LoginButton_clicked()
-{
-
-}
+void LoginOrRegister::on_LoginButton_clicked(){ accept(); }
 

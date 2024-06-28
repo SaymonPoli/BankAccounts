@@ -3,7 +3,7 @@
 
 Client::Client() {}
 
-string Client::GetInformation()
+string Client::GetInformation() const
 {
     stringstream stt;
     stt << "Client name: " << m_name << " Job: " << m_job << " Income: " << m_income;
@@ -11,6 +11,10 @@ string Client::GetInformation()
     return stt.str();
 }
 
-string Client::GetName() { return m_name; };
-string Client::GetCpf() { return m_cpf; };
-string Client::GetIncome() { return to_string(m_income); };
+string Client::GetName() const { return m_name; };
+
+string Client::GetCpf() const { return m_cpf; };
+
+string Client::GetIncome() const { return to_string(m_income); };
+
+string Client::GetPassoword() const { return m_password; };
